@@ -1,4 +1,4 @@
-package com.fahixa.collabolio
+package com.bangkit.collabolio
 
 import org.junit.Test
 
