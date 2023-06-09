@@ -16,4 +16,10 @@
     <string name="sign_in_dengan_google">Sign In Dengan Google</string>
     <string name="collabolio">Collabolio</string>
     <string name="collabolio_description">Collabolio matches you with coworkers to build impressive portfolios together.</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_age">Age</string>
+    <string name="btn_apply">Apply</string>
+    <string name="btn_signout">Signout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

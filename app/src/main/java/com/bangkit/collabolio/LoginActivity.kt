@@ -143,6 +143,12 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
+    override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        updateUI(currentUser)
+    }
+
     companion object {
         private const val TAG = "LoginActivity"
     }

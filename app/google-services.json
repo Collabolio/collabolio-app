@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "915431608659-vovaukeba6lp3kku6ji63vj411d2orl3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bangkit.collabolio",
+            "certificate_hash": "d1de07eed51a563024057f12c9d695143731ebf6"
+          }
+        },
+        {
           "client_id": "915431608659-kt4l7rofj394rh4dgat78acfh9v5lp2o.apps.googleusercontent.com",
           "client_type": 3
         }

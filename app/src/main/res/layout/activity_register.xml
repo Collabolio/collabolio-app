@@ -123,7 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="182dp"
+            android:layout_marginTop="184dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_register">
@@ -141,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/go_to_login"
-                android:textColor="@color/blue"
+                android:textColor="@color/navy"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 tools:alpha="1" />
