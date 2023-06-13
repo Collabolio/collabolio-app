@@ -3,20 +3,17 @@ package com.bangkit.collabolio.fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
 import com.bangkit.collabolio.R
 import com.bangkit.collabolio.adapters.CardsAdapter
 import com.bangkit.collabolio.databinding.FragmentSwipeBinding
 import com.bangkit.collabolio.utilities.User
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
-import com.google.firebase.firestore.QuerySnapshot
 import com.lorentzos.flingswipe.SwipeFlingAdapterView
 
 // get current user
@@ -54,6 +51,7 @@ class SwipeFragment : Fragment() {
                 val userName = userDocument.getString("username")
                 val userEmail = userDocument.getString("email")
                 val userProfileURL = userDocument.getString("profile.photoURL")
+                // fillingTheItems()
                 fillingTheItems()
 
                 Log.d("PENG", "username kamu adalah : $userName")
@@ -93,34 +91,27 @@ class SwipeFragment : Fragment() {
         })
     }
 
-    fun fillingTheItems() {
-        // Created a query variable which returns users based on gender
-        val cardsQuery = db.collection("users").whereEqualTo("isMale",true)
-        cardsQuery.addSnapshotListener(object: EventListener<QuerySnapshot> {
-            override fun onEvent(snapshot: QuerySnapshot?, error: FirebaseFirestoreException?) {
-                if (error != null) {
-                    Log.e("PENG", "Error getting documents: ", error)
-                    return
-                }
-
-                snapshot?.documents?.forEach { document ->
-                    // getting the value of users in a variable as we move through them in the for loop
-                    // val user = "halo"
-                    // condition where user is found
-                    // if (user != null) {
-                    // variable which decides whether to show the user or not
-                    val showUser = true
-                    // setting the condition when the user has been shown once
-                    // ini masih diskip ya gaes ya
-                    // adding the eligible users to the list and notifying the adapter about data changes
-                    /* if (showUser) {
+    private fun fillingTheItems() {
+        val cardsQuery = db.collection("users").whereEqualTo("profile.isMale", true).limit(10)
+        cardsQuery.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    // val profile = document.data["profile"] as MutableMap<*, *>
+                    // val displayName = profile["displayName"]
+                    // Log.d("KARTU", "${document.id} => $displayName")
+                    val user = document.toObject(User::class.java)
+                    // Log.d("TESTI", "$user")
+                    if (!rowItems.contains(user)) {
                         rowItems.add(user)
                         cardsAdapter?.notifyDataSetChanged()
-                    }*/
+                    }
                 }
             }
-        })
+            .addOnFailureListener { exception ->
+                Log.d("KARTU","get failed with : ", exception)
+            }
     }
+}
 
 
     /* MENCOBA UNTUK NAMPILIN TEKS DARI FIRESTORE CLOUD DATABASE (BERHASIL COY)
@@ -132,8 +123,3 @@ class SwipeFragment : Fragment() {
 
                     textDisplayName.text = documentSnapshot.getString("profile.displayName")
                 } */
-
-}
-
-
-

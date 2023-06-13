@@ -1,4 +1,4 @@
-package com.bangkit.collabolio
+package com.bangkit.collabolio.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
 import androidx.activity.result.contract.ActivityResultContracts
+import com.bangkit.collabolio.R
 import com.bangkit.collabolio.databinding.ActivityLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient

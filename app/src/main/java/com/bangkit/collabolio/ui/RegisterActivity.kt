@@ -1,4 +1,4 @@
-package com.bangkit.collabolio
+package com.bangkit.collabolio.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

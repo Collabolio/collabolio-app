@@ -1,4 +1,4 @@
-package com.bangkit.collabolio
+package com.bangkit.collabolio.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.bangkit.collabolio.R
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {

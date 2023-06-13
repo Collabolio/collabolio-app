@@ -1,34 +1,38 @@
 package com.bangkit.collabolio.fragments
 
 import android.os.Bundle
-import android.text.Editable
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bangkit.collabolio.R
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.bangkit.collabolio.CollabolioCallback
 import com.bangkit.collabolio.databinding.FragmentProfileBinding
-import com.google.firebase.firestore.EventListener
-import com.google.firebase.firestore.FirebaseFirestoreException
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.auth.User
+import com.bumptech.glide.Glide
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
+    private var callback: CollabolioCallback? = null
+
+    fun setCallback(callback: CollabolioCallback) {
+        this.callback = callback
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnSignout.setOnClickListener { callback?.onSignOut()}
+        binding.progressLayout.setOnTouchListener { view, event -> true }
+        binding.progressLayout.visibility = View.VISIBLE
         val userProfileRef = db.collection("users").document(currentUser!!.uid)
         userProfileRef.get().addOnSuccessListener { document ->
             if (document != null) {
@@ -36,16 +40,19 @@ class ProfileFragment : Fragment() {
                 val displayName = profile["displayName"]
                 val age = profile["age"]
                 val email = document.data!!["email"]
+                val photoURL = profile["photoURL"].toString()
 
-                binding.edtName.text = displayName
-                binding.edtAge.text = age
-                binding.edtEmail.text = email
-
-            }
-            else {
-                Log.d("PROF", "ada error nih :")
+                binding.edtName.setText(displayName.toString(), TextView.BufferType.EDITABLE)
+                binding.edtAge.setText(age.toString(), TextView.BufferType.EDITABLE)
+                binding.edtEmail.setText(email.toString(), TextView.BufferType.EDITABLE)
+                populateImage(photoURL)
+                binding.progressLayout.visibility = View.GONE
             }
         }
     }
-
+    fun populateImage(uri: String){
+        Glide.with(this)
+            .load(uri)
+            .into(binding.imageViewPhoto)
+    }
 }

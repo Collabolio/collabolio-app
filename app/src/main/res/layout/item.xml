@@ -12,8 +12,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
+        android:layout_margin="1dp"
         android:layout_width="350dp"
-        android:layout_height="350dp"
+        android:layout_height="400dp"
         android:layout_gravity="center"
         android:background="@color/grey"
         app:cardCornerRadius="20dp"
@@ -23,29 +24,54 @@
             android:id="@+id/imageViewPhoto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:id="@+id/profileClickLayout"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:background="#aaaaaaaa"
-            android:paddingLeft="8dp"
+            android:layout_height="150dp"
             android:layout_gravity="bottom"
-            android:gravity="bottom">
+            android:background="#aaaaaaaa"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="8dp">
 
             <TextView
                 android:id="@+id/nameTV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="27sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="bottom|left"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
+                android:textColor="@color/white"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                tools:text="DisplayName" />
+
+            <TextView
+                android:id="@+id/emailTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
                 android:gravity="bottom|left"
-                tools:text="Hello"/>
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:text="Email" />
+
+            <TextView
+                android:id="@+id/skillTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="bottom|left"
+                android:paddingStart="5dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:text="Skills" />
 
         </LinearLayout>
 

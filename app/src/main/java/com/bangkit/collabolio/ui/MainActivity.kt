@@ -1,4 +1,5 @@
-package com.bangkit.collabolio
+package com.bangkit.collabolio.ui
+
 
 import android.content.Intent
 import androidx.fragment.app.Fragment
@@ -6,9 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.content.ContextCompat
-import com.bangkit.collabolio.utilities.Profile
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentContainerView
+import com.bangkit.collabolio.CollabolioCallback
+import com.bangkit.collabolio.R
 import com.bangkit.collabolio.databinding.ActivityMainBinding
 import com.bangkit.collabolio.fragments.ProfileFragment
 import com.bangkit.collabolio.fragments.SwipeFragment
@@ -18,7 +20,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CollabolioCallback {
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
 
@@ -125,8 +127,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-    private fun signOut() {
+    override fun onSignOut() {
         auth.signOut()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
