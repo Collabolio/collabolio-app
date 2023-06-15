@@ -1,6 +1,5 @@
 package com.bangkit.collabolio.ui
 
-
 import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity

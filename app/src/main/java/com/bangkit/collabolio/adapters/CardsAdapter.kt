@@ -1,19 +1,20 @@
 package com.bangkit.collabolio.adapters
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bangkit.collabolio.utilities.User
+import com.bangkit.collabolio.utilities.UserSwipe
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bangkit.collabolio.R
+import com.bangkit.collabolio.ui.home.HomeViewModel
 
-class CardsAdapter(context: Context?, resourceId: Int, users: List<User>): ArrayAdapter<User>(
+class CardsAdapter(context: Context?, resourceId: Int, users: List<UserSwipe>): ArrayAdapter<UserSwipe>(
     context!!, resourceId, users) {
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // get the current user
         var user = getItem(position)
@@ -27,17 +28,17 @@ class CardsAdapter(context: Context?, resourceId: Int, users: List<User>): Array
 
 
         // get the layout if any or inflate the layout
-        var finalView = convertView?: LayoutInflater.from(context).inflate(R.layout.item, parent, false)
+        val finalView = convertView?: LayoutInflater.from(context).inflate(R.layout.item, parent, false)
 
         // get the ids of the fields
-        var emailTV = finalView.findViewById<TextView>(R.id.emailTV)
-        var nameTV = finalView.findViewById<TextView>(R.id.nameTV)
-        var skillTV = finalView.findViewById<TextView>(R.id.skillTV)
-        var image = finalView.findViewById<ImageView>(R.id.imageViewPhoto)
+        val nameTV = finalView.findViewById<TextView>(R.id.tv_name)
+        val emailTV = finalView.findViewById<TextView>(R.id.tv_email)
+        val skillTV = finalView.findViewById<TextView>(R.id.tv_skills)
+        val image = finalView.findViewById<ImageView>(R.id.iv_user)
 
         // add content in the layout
-        emailTV.text = "${user?.email}"
         nameTV.text = "$displayName"
+        emailTV.text = "${user?.email}"
         skillTV.text = skills.joinToString(", ") { it["name"].toString() }
         val into = Glide.with(context)
             .load(photoURL)

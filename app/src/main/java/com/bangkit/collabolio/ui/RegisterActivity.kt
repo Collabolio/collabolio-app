@@ -3,7 +3,9 @@ package com.bangkit.collabolio.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.bangkit.collabolio.R
 import com.bangkit.collabolio.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -28,9 +30,21 @@ class RegisterActivity : AppCompatActivity() {
             val confirmPassword = binding.etConfirmPassword.text.toString()
 
             if (password == confirmPassword) {
-                registerUser(email, password)
+                when {
+                    email.isEmpty() -> {
+                        binding.registerEmailLayout.error = "masukkan Email"
+                    }
+                    password.isEmpty() -> {
+                        binding.registerPasswordLayout.error = "Masukkan Password"
+                    }
+                    confirmPassword.isEmpty() -> {
+                        binding.confirmPasswordLayout.error = "Masukkan konfirmasi password"
+                    }else ->{
+                        registerUser(email, password)
+                    }
+                }
             } else {
-                // Handle password mismatch error
+                binding.confirmPasswordLayout.error = getString(R.string.error_confirm_password)
             }
         }
         binding.toLogin.setOnClickListener {
@@ -52,7 +66,7 @@ class RegisterActivity : AppCompatActivity() {
                         show()
                     }
                 } else {
-                        // Handle login error here
+                    Toast.makeText(this, getString(R.string.error_login), Toast.LENGTH_SHORT).show()
                 }
             }
     }

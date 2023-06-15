@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bangkit.collabolio.R
 import com.bangkit.collabolio.databinding.ActivityLoginBinding
@@ -19,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -77,9 +79,9 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    goToMainActivity()
+                    goToNextActivity()
                 } else {
-                    // Handle login error here
+                    Toast.makeText(this, getString(R.string.error_login), Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -134,14 +136,35 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null){
-            goToMainActivity()
+            goToNextActivity()
         }
     }
 
-    private fun goToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        finish()
+    private fun goToNextActivity() {
+        val user = auth.currentUser
+        val firestore = FirebaseFirestore.getInstance()
+        user?.let { currentUser ->
+            val userId = currentUser.uid
+            val userRef = firestore.collection("users").document(userId)
+            userRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    val phoneNumber = documentSnapshot.getString("profile.phoneNumber")
+                    if (phoneNumber.isNullOrEmpty()) {
+                        val intent = Intent(this, InputBioActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        val intent = Intent(this, HomeActivity::class.java)
+                        startActivity(intent)
+                        finish()
+
+                    }
+                    finish()
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Error: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
 
     override fun onStart() {

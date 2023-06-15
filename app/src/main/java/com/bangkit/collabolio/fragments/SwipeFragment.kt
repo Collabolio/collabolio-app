@@ -11,10 +11,17 @@ import androidx.fragment.app.Fragment
 import com.bangkit.collabolio.R
 import com.bangkit.collabolio.adapters.CardsAdapter
 import com.bangkit.collabolio.databinding.FragmentSwipeBinding
+import com.bangkit.collabolio.utilities.ApiRequest
 import com.bangkit.collabolio.utilities.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 import com.lorentzos.flingswipe.SwipeFlingAdapterView
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+
 
 // get current user
 val firebaseAuth = FirebaseAuth.getInstance()
@@ -28,7 +35,7 @@ val db = FirebaseFirestore.getInstance()
 private var cardsAdapter: ArrayAdapter<User>? = null
 private var rowItems = ArrayList<User>()
 
-class SwipeFragment : Fragment() {
+class SwipeFragment() : Fragment() {
 
     private lateinit var binding: FragmentSwipeBinding
 
@@ -51,8 +58,10 @@ class SwipeFragment : Fragment() {
                 val userName = userDocument.getString("username")
                 val userEmail = userDocument.getString("email")
                 val userProfileURL = userDocument.getString("profile.photoURL")
-                // fillingTheItems()
-                fillingTheItems()
+
+                //apiReqForUids()
+                //fetchAllUids()
+                // fillingTheItemsByApi()
 
                 Log.d("PENG", "username kamu adalah : $userName")
                 Log.d("PENG", "email kamu adalah : $userEmail")
@@ -90,9 +99,56 @@ class SwipeFragment : Fragment() {
             }
         })
     }
+    private fun apiReqForUids() {
+        val apiRequest = ApiRequest()
+        val thread = Thread(Runnable {
+            val users = apiRequest.getUsers()
+            Log.d("APISA", Gson().toJson(users))
+        })
+
+        thread.start()
+
+    }
+/*
+    private fun fetchAllUids(): Deferred<MutableList<String>> {
+        val apiRequest = ApiRequest()
+        val deferred = Deferred<MutableList<String>>(Dispatchers.IO)
+
+        val thread = Thread(Runnable {
+            val users = apiRequest.getUsers()
+            val uids = mutableListOf<String>()
+
+            for (user in users!!) {
+                uids.add(user.uid.toString())
+            }
+
+            deferred.complete(uids)
+        })
+        thread.start()
+
+        return deferred
+    }
+    private fun fillingTheItemsByApi() {
+        val uids = fetchAllUids()
+
+        val cardsQuery = db.collection("users").whereIn("uid", uids)
+        cardsQuery.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val user = document.toObject(User::class.java)
+                    if (!rowItems.contains(user)) {
+                        rowItems.add(user)
+                        cardsAdapter?.notifyDataSetChanged()
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("KARTU", "get failed with : ", exception)
+            }
+    }*/
 
     private fun fillingTheItems() {
-        val cardsQuery = db.collection("users").whereEqualTo("profile.isMale", true).limit(10)
+        val cardsQuery = db.collection("users").whereEqualTo("profile.isMale", true)
         cardsQuery.get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
@@ -108,10 +164,11 @@ class SwipeFragment : Fragment() {
                 }
             }
             .addOnFailureListener { exception ->
-                Log.d("KARTU","get failed with : ", exception)
+                Log.d("KARTU", "get failed with : ", exception)
             }
     }
 }
+
 
 
     /* MENCOBA UNTUK NAMPILIN TEKS DARI FIRESTORE CLOUD DATABASE (BERHASIL COY)
