@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity"
+    tools:context=".LoginActivity"
     android:padding="20dp">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -111,12 +111,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/or" />
 
-        <com.google.android.gms.common.SignInButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_google"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
-            android:text="Sign In Dengan Google"
+            android:background="@drawable/btn_google"
+            android:text="@string/sign_in_dengan_google"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:drawableStart="@drawable/google__g__logo"
+            android:paddingHorizontal="36dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/or" />
@@ -154,7 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/go_to_register"
-                android:textColor="@color/navy"
+                android:textColor="@color/blue"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 tools:alpha="1" />

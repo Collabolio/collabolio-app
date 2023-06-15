@@ -78,7 +78,7 @@
                     android:id="@+id/btnSignout"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
-                    android:textAlignment="center"
+                    android:gravity="bottom"
                     android:text="@string/btn_signout" />
 
             </com.google.android.material.textfield.TextInputLayout>
