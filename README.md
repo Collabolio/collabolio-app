@@ -34,11 +34,13 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#contribution">Contribution</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
 
 
 The name "Collabolio" is a portmanteau of the words "Collaboration" and "Portfolio". The word "Collaboration" represents the focus of the platform on teamwork and cooperation, while "Portfolio" represents the end goal of creating a showcase of one's skills and accomplishments. The combination of these two words in the name "Collabolio" represents the platform's goal to facilitate collaboration among users for the purpose of creating high-quality portfolios.
@@ -65,19 +67,37 @@ This projects is built with
 
 ### Features
 
-* [User registration and login]
-* [User profiles]
-* [Swiping feature where users can swipe left or right to indicate whether they’re interested or not.]
-* [Matches feature where if two users both swipe right on each other, it’s a match and they can start chatting] *COMING SOON!*
-* [In-app messaging] *COMING SOON!*
-
+* User registration and login
+* User profiles
+* Swiping feature where users can swipe left or right to indicate whether they’re interested or not.
+* Matches feature where if two users both swipe right on each other, it’s a match and they can start chatting *COMING SOON!*
+* In-app messaging *COMING SOON!*
 
 
 ### Installation
 
-Below is the installation on this application :
+* Download the APK with [link here](https://github.com/Collabolio/collabolio-app/releases/download/application/CollabolioApp.apk)
+* Before installation begin, make sure that your phone have granted the unknown app permission
+* Install APK
+* Collabolio is ready to go
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- CONTRIBUTION -->
+## Contribution
 
+_Machine Learning Team_ :
+* Jasica Ardana Herviyandasari ([Github](https://github.com/Jessicaardana))
+* Amelia Nur Safitri ([Github](https://github.com/ameliaa2))
+
+_Mobile Development Team_ :
+* Tio Fahdi ([Github](https://github.com/Tiofd))
+* Bastian Arfianto ([Github](https://github.com/bastianarf))
+
+_Cloud Computing Team_ :
+* Agoes Budi Satriya ([Github](https://github.com/Aszaychik))
+* M. Fathir Arya Nafis ([Github](https://github.com/fathirarya))
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
