@@ -45,6 +45,8 @@
 
 The name "Collabolio" is a portmanteau of the words "Collaboration" and "Portfolio". The word "Collaboration" represents the focus of the platform on teamwork and cooperation, while "Portfolio" represents the end goal of creating a showcase of one's skills and accomplishments. The combination of these two words in the name "Collabolio" represents the platform's goal to facilitate collaboration among users for the purpose of creating high-quality portfolios.
 
+Collabolio was created to address the lack of experience in preparing for the job market. Research showed that many companies require a diverse and strong portfolio when hiring new employees, but many people feel they lack one. Having a portfolio is important before entering the workforce. Collabolio aims to help students and new graduates gain skills and experience by working on live projects. The platform was developed based on the team's own experiences and speaking to others who faced challenges finding a job. Collabolio provides a collaborative & enjoyable process for portfolio creation, and bridging the gap between skills & desired jobs.
+
 The main scope of this project is to develop an Android-based social-collaborative platform that uses matchmaking-based algorithms to help college graduates in Indonesia improve their teamwork and collaboration skills, with a focus on portfolio creation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
