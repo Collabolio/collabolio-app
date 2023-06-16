@@ -41,9 +41,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/logo/Screenshot (4).jpg" width="225" height="400">
-<img src="/logo/Screenshot (5).jpg" width="225" height="400">
-<img src="/logo/Screenshot (1).jpg" width="225" height="400">
+<img src="/logo/Screenshot (4).jpg" width="225" height="450">
+<img src="/logo/Screenshot (5).jpg" width="225" height="450">
+<img src="/logo/Screenshot (1).jpg" width="225" height="450">
 
 The name "Collabolio" is a portmanteau of the words "Collaboration" and "Portfolio". The word "Collaboration" represents the focus of the platform on teamwork and cooperation, while "Portfolio" represents the end goal of creating a showcase of one's skills and accomplishments. The combination of these two words in the name "Collabolio" represents the platform's goal to facilitate collaboration among users for the purpose of creating high-quality portfolios.
 
