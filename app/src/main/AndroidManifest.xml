@@ -45,10 +45,7 @@
             android:name=".ui.LoginActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:theme="@style/Theme.CollabolioApp.NoActionBar"></activity>
-        <activity
-            android:name=".ui.MainActivity"
-            android:exported="false" />
+            android:theme="@style/Theme.CollabolioApp.NoActionBar"/>
     </application>
 
 </manifest>

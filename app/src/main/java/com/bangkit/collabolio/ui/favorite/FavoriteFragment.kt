@@ -6,8 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< Updated upstream
 
 import android.widget.ArrayAdapter
+=======
+import android.widget.TextView
+>>>>>>> Stashed changes
 import androidx.fragment.app.Fragment
 import com.bangkit.collabolio.R
 import com.bangkit.collabolio.adapters.CardsAdapter
@@ -34,8 +38,7 @@ class FavoriteFragment : Fragment() {
     private var rowItems = ArrayList<Favorite>()
     private var users = mutableListOf<Favorite>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -47,7 +50,13 @@ class FavoriteFragment : Fragment() {
     /*val favoriteViewModel =
             ViewModelProvider(this)[FavoriteViewModel::class.java] */
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
-        return binding.root
+        val root: View = binding.root
+
+        val textView: TextView = binding.textDashboard
+        favoriteViewModel.text.observe(viewLifecycleOwner) {
+            textView.text = it
+        }
+        return root
     }
 
     override fun onDestroyView() {

@@ -1,14 +1,14 @@
 package com.bangkit.collabolio.ui.favorite
 
-import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bangkit.collabolio.response.UserProfileResponse
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+
+
 
 class FavoriteViewModel : ViewModel() {
+<<<<<<< Updated upstream
     private val _userFavoriteData = MutableLiveData<List<UserProfileResponse?>>()
     val userFavoriteData : LiveData<List<UserProfileResponse?>> = _userFavoriteData
     fun getUserFavorite() {
@@ -44,5 +44,10 @@ class FavoriteViewModel : ViewModel() {
                     Log.d("UserViewModel", "error : $exception")
                 }
         }
+=======
+    private val _text = MutableLiveData<String>().apply {
+        value = "Coming Soon"
+>>>>>>> Stashed changes
     }
+    val text: LiveData<String> = _text
 }
