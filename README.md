@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Collabolio/collabolio-app">
-    <img src="" alt="Logo" width="80" height="80">
+    <img src="/logo/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Collabolio App</h3>
@@ -34,41 +34,29 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The name "Collabolio" is a portmanteau of the words "Collaboration" and "Portfolio". The word "Collaboration" represents the focus of the platform on teamwork and cooperation, while "Portfolio" represents the end goal of creating a showcase of one's skills and accomplishments. The combination of these two words in the name "Collabolio" represents the platform's goal to facilitate collaboration among users for the purpose of creating high-quality portfolios.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+The main scope of this project is to develop an Android-based social-collaborative platform that uses matchmaking-based algorithms to help college graduates in Indonesia improve their teamwork and collaboration skills, with a focus on portfolio creation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This projects is built with
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* Kotlin
+* TensorFlow
+* Gson
+* Okhttp
+* Firestore
+* Firebase
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
