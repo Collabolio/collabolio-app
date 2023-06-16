@@ -11,9 +11,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 class FavoriteViewModel : ViewModel() {
     private val _userFavoriteData = MutableLiveData<List<UserProfileResponse?>>()
     val userFavoriteData : LiveData<List<UserProfileResponse?>> = _userFavoriteData
-
-<<<<<<< HEAD
-=======
     fun getUserFavorite() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         val db = FirebaseFirestore.getInstance()
@@ -32,7 +29,8 @@ class FavoriteViewModel : ViewModel() {
                                 .get()
                                 .addOnSuccessListener { querySnapshot ->
                                     if (querySnapshot != null) {
-                                        val userProfile = documentSnapshot.toObject(UserProfileResponse::class.java)
+                                        val userProfile = documentSnapshot.toObject(
+                                            UserProfileResponse::class.java)
                                         _userFavoriteData.value = listOf(userProfile)
                                     }
                                 }
@@ -47,5 +45,4 @@ class FavoriteViewModel : ViewModel() {
                 }
         }
     }
->>>>>>> ccc12ab5a75df3e79eb8ae8960e2b4af403407dc
 }

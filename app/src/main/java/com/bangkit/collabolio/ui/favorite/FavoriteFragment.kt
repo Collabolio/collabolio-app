@@ -6,10 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
+
 import android.widget.ArrayAdapter
-=======
->>>>>>> ccc12ab5a75df3e79eb8ae8960e2b4af403407dc
 import androidx.fragment.app.Fragment
 import com.bangkit.collabolio.R
 import com.bangkit.collabolio.adapters.CardsAdapter

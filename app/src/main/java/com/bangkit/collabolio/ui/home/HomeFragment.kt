@@ -7,10 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bangkit.collabolio.R
 import com.bangkit.collabolio.adapters.CardsAdapter
 import com.bangkit.collabolio.databinding.FragmentHomeBinding
+import com.bangkit.collabolio.response.Connections
+import com.bangkit.collabolio.ui.UserProfile
+import com.bangkit.collabolio.ui.Users
 import com.bangkit.collabolio.utilities.ApiRequest
 import com.bangkit.collabolio.utilities.UserSwipe
 import com.google.firebase.auth.FirebaseAuth
@@ -87,7 +91,11 @@ class HomeFragment : Fragment() {
             }
 
             override fun onRightCardExit(p0: Any?) {
-                //
+                val selectedUser = p0 as UserSwipe
+                val selectedUserId = selectedUser.uid
+                if (!selectedUserId.isNullOrEmpty()) {
+                    Toast.makeText(context, "${selectedUser.profile?.get("displayName")} ditambahkan ke favorit",Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onAdapterAboutToEmpty(p0: Int) {

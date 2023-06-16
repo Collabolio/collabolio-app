@@ -50,10 +50,7 @@
             tools:text="Email" />
 
         <TextView
-<<<<<<< HEAD
             android:id="@+id/tv_skills"
-=======
->>>>>>> ccc12ab5a75df3e79eb8ae8960e2b4af403407dc
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
