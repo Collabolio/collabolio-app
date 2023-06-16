@@ -91,7 +91,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onAdapterAboutToEmpty(p0: Int) {
-                //
+                fillingTheItemsByApi()
             }
 
             override fun onScroll(p0: Float) {
@@ -100,12 +100,12 @@ class HomeFragment : Fragment() {
 
         })
 
-        /* homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        /*homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         homeViewModel.getUserSwipe() */
 
     }
 
-    private fun fillingTheItems() {
+    /*private fun fillingTheItems() {
         val cardsQuery = db.collection("users").whereEqualTo("profile.isMale", true)
         cardsQuery.get()
             .addOnSuccessListener { documents ->
@@ -120,7 +120,7 @@ class HomeFragment : Fragment() {
             .addOnFailureListener { exception ->
                 Log.d("KARTU", "get failed with : ", exception)
             }
-    }
+    }*/
 
     private fun apiReqForUids(): MutableList<String> {
         val apiRequest = ApiRequest()
@@ -144,7 +144,6 @@ class HomeFragment : Fragment() {
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     val user = document.toObject(UserSwipe::class.java)
-                    Log.d("SUKL", user.toString())
                     if (!rowItems.contains(user)) {
                         rowItems.add(user)
                         cardsAdapter?.notifyDataSetChanged()

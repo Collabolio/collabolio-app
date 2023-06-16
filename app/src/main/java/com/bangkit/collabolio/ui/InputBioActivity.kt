@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.MultiAutoCompleteTextView
 import android.widget.Toast
 import com.bangkit.collabolio.databinding.ActivityInputbioBinding
+import com.bangkit.collabolio.response.Connections
 import com.bangkit.collabolio.response.Education
 import com.bangkit.collabolio.response.Interests
 import com.bangkit.collabolio.response.Skills
@@ -60,10 +61,10 @@ class InputBioActivity : AppCompatActivity() {
             interestsList.add(interest)
         }
 
-
+        val connectionList = mutableListOf<Connections>()
 
         val userProfile = UserProfile(displayName, phoneNumber, birthDate, male, location, education, bio,
-            skillsList, interestsList)
+            skillsList, interestsList, connectionList)
         val users = Users((userProfile))
 
 

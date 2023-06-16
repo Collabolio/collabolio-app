@@ -9,6 +9,7 @@ import com.bangkit.collabolio.R
 import com.lorentzos.flingswipe.SwipeFlingAdapterView
 import com.bangkit.collabolio.adapters.CardsAdapter
 import com.bangkit.collabolio.databinding.FragmentHomeBinding
+import com.bangkit.collabolio.utilities.ApiRequest
 import com.bangkit.collabolio.utilities.UserSwipe
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,7 +19,6 @@ class HomeViewModel : ViewModel() {
     private val _homeProfileData = MutableLiveData<UserSwipe?>()
     val homeProfileData: LiveData<UserSwipe?> = _homeProfileData
     private var binding: FragmentHomeBinding? = null
-
 
     fun getUserSwipe() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
