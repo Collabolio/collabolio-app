@@ -75,18 +75,40 @@ class InputBioActivity : AppCompatActivity() {
             when {
                 displayName.isEmpty() -> {
                     binding.inputName.error = "Masukkan Nama"
+                    Toast.makeText(this, "Masukkan Nama", Toast.LENGTH_SHORT).show()
+
                 }
                 phoneNumber.isEmpty() -> {
                     binding.inputNumber.error = "Masukkan Nomor Telepon"
+                    Toast.makeText(this, "Masukkan Nomor Telepon", Toast.LENGTH_SHORT).show()
                 }
                 birthDate.isEmpty() -> {
                     binding.inputNumber.error = "Masukkan Tanggal Lahir"
+                    Toast.makeText(this, "Masukkan Tanggal Lahir", Toast.LENGTH_SHORT).show()
                 }
                 userSkills.isEmpty() -> {
                     binding.mactvSkills.error = "Masukkan Keahlian"
+                    Toast.makeText(this, "Masukkan Keahlian", Toast.LENGTH_SHORT).show()
                 }
                 userInterests.isEmpty() -> {
                     binding.mactvInterests.error= "Masukkan Posisi Rekan yang di Inginkan"
+                    Toast.makeText(this, "Masukkan Posisi Rekan yang di Inginkan", Toast.LENGTH_SHORT).show()
+                }
+                location.isEmpty() -> {
+                    binding.inputAddress.error = "Masukkan Alamat"
+                    Toast.makeText(this, "Masukkan Alamat", Toast.LENGTH_SHORT).show()
+                }
+                degree.isEmpty() -> {
+                    binding.inputDegree.error = "Masukkan Gelar dan Jurusan"
+                    Toast.makeText(this, "Masukkan Gelar dan Jurusan", Toast.LENGTH_SHORT).show()
+                }
+                school.isEmpty() -> {
+                    binding.inputAddress.error = "Masukkan Sekolah atau Universitas"
+                    Toast.makeText(this, "Masukkan Sekolah atau Universitas", Toast.LENGTH_SHORT).show()
+                }
+                bio.isEmpty() -> {
+                    binding.inputAddress.error = "Masukkan Bio"
+                    Toast.makeText(this, "Masukkan Bio", Toast.LENGTH_SHORT).show()
                 }
                 else -> {
                 userRef.set(users, SetOptions.merge())

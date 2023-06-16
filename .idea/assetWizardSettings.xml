@@ -24,11 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-<<<<<<< Updated upstream
-                                                <entry key="imagePath" value="C:\Users\Bastian\AppData\Local\Temp\ic_android_black_24dp.xml" />
-=======
                                                 <entry key="imagePath" value="C:\Users\tiofd\AppData\Local\Temp\ic_android_black_24dp.xml" />
->>>>>>> Stashed changes
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -71,11 +67,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-<<<<<<< Updated upstream
-                                                <entry key="imagePath" value="C:\Users\Bastian\AppData\Local\Temp\ic_android_black_24dp.xml" />
-=======
                                                 <entry key="imagePath" value="C:\Users\tiofd\AppData\Local\Temp\ic_android_black_24dp.xml" />
->>>>>>> Stashed changes
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -87,13 +79,9 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-<<<<<<< Updated upstream
-                                                <entry key="imagePath" value="E:\C O L L E G E\ALIH JENJANG UNESA\Bangkit 2023\Capstone\logo.png" />
-                                                <entry key="scalingPercent" value="103" />
-=======
                                                 <entry key="imagePath" value="C:\Users\tiofd\Downloads\Plugin icon - 1 (2).png" />
-                                                <entry key="scalingPercent" value="70" />
->>>>>>> Stashed changes
+                                                <entry key="scalingPercent" value="121" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -137,11 +125,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-<<<<<<< Updated upstream
-                                                <entry key="imagePath" value="C:\Users\Bastian\AppData\Local\Temp\ic_android_black_24dp.xml" />
-=======
                                                 <entry key="imagePath" value="C:\Users\tiofd\AppData\Local\Temp\ic_android_black_24dp.xml" />
->>>>>>> Stashed changes
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -185,11 +169,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-<<<<<<< Updated upstream
-                                                <entry key="imagePath" value="C:\Users\Bastian\AppData\Local\Temp\ic_android_black_24dp.xml" />
-=======
                                                 <entry key="imagePath" value="C:\Users\tiofd\AppData\Local\Temp\ic_android_black_24dp.xml" />
->>>>>>> Stashed changes
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -253,11 +233,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-<<<<<<< Updated upstream
-                                                <entry key="imagePath" value="C:\Users\Bastian\AppData\Local\Temp\ic_android_black_24dp.xml" />
-=======
                                                 <entry key="imagePath" value="C:\Users\tiofd\AppData\Local\Temp\ic_android_black_24dp.xml" />
->>>>>>> Stashed changes
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -301,44 +277,6 @@
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                      </PersistentState>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </PersistentState>
-          </value>
-        </entry>
-        <entry key="vectorWizard">
-          <value>
-            <PersistentState>
-              <option name="children">
-                <map>
-                  <entry key="vectorAssetStep">
-                    <value>
-                      <PersistentState>
-                        <option name="children">
-                          <map>
-                            <entry key="clipartAsset">
-                              <value>
-                                <PersistentState>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/edit/baseline_edit_24.xml" />
-                                    </map>
-                                  </option>
-                                </PersistentState>
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="icon_skip" />
-                            <entry key="sourceFile" value="C:\Users\tiofd\Downloads\Vector (2).svg" />
                           </map>
                         </option>
                       </PersistentState>

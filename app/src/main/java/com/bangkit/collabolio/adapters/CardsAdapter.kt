@@ -17,7 +17,7 @@ class CardsAdapter(context: Context?, resourceId: Int, users: List<UserSwipe>): 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // get the current user
-        var user = getItem(position)
+        val user = getItem(position)
         val profile = user?.profile ?: emptyMap()
         val displayName = profile["displayName"] as? String
         val photoURL = profile["photoURL"] as? String
