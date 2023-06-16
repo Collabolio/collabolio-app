@@ -60,4 +60,24 @@ This projects is built with
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Features
+
+* [User registration and login]
+* [User profiles]
+* [Swiping feature where users can swipe left or right to indicate whether they’re interested or not.]
+* [Matches feature where if two users both swipe right on each other, it’s a match and they can start chatting] *COMING SOON!*
+* [In-app messaging] *COMING SOON!*
+
+
+
+### Installation
+
+Below is the installation on this application :
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 
